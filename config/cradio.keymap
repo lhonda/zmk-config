@@ -89,7 +89,7 @@
         shift_ins: shift_ins {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
-          bindings = <&kp SHIFT>,<&kp INS>;
+          bindings = <&kp LSHIFT>,<&kp INS>;
         };
         cedilla: TEXT("ç") {
           compatible = "zmk,behavior-macro";
