@@ -48,48 +48,48 @@
         };
         alt_2: alt_2 {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
-          bindings = <&kp LALT, &kp 2>;
+          #binding-cells = <0>;
+          bindings = <&kp LALT>,<&kp 2>;
         };
         alt_3: alt_3 {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
-          bindings = <&kp LALT, &kp 3>;
+          #binding-cells = <0>;
+          bindings = <&kp LALT>,< &kp 3>;
         };
         alt_4: alt_4 {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
-          bindings = <&kp LALT, &kp 4>;
+          #binding-cells = <0>;
+          bindings = <&kp LALT>,< &kp 4>;
         };
         alt_slash: alt_slash {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
-          bindings = <&kp LALT, &kp SLASH>;
+          #binding-cells = <0>;
+          bindings = <&kp LALT>,< &kp SLASH>;
         };
         paren: paren {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
-          bindings = <&kp LPAR, &kp RPAR, &kp LEFT>;
+          #binding-cells = <0>;
+          bindings = <&kp LPAR>,< &kp RPAR>,< &kp LEFT>;
         };
         bracket: bracket {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
-          bindings = <&kp LEFT_BRACKET, &kp RIGHT_BRACKET, &kp LEFT>;
+          #binding-cells = <0>;
+          bindings = <&kp LEFT_BRACKET>,< &kp RIGHT_BRACKET,k>,< &kp LEFT>;
         };
         curly: curly {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
-          bindings = <&kp LEFT_BRACE, &kp RIGHT_BRACE, &kp LEFT>;
+          #binding-cells = <0>;
+          bindings = <&kp LEFT_BRACE>,< &kp RIGHT_BRACE>,< &kp LEFT>;
         };
         alt_tab: alt_tab {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
-          bindings = <&kp LALT, &kp TAB>;
+          #binding-cells = <0>;
+          bindings = <&kp LALT>,< &kp TAB>;
         };
         shift_ins: shift_ins {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
-          bindings = <&kp SHIFT, &kp INS>;
+          #binding-cells = <0>;
+          bindings = <&kp SHIFT>,<&kp INS>;
         };
         cedilla: TEXT("ç") {
           compatible = "zmk,behavior-macro";
