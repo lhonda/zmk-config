@@ -94,7 +94,7 @@
         cedilla: cedilla {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
-          bindings = <&kp SINGLE_QUOTE>, <&kp c>;
+          bindings = <&kp SINGLE_QUOTE>, <&kp C>;
         };
       };
 
