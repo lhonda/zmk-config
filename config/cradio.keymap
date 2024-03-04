@@ -74,7 +74,7 @@
         bracket: bracket {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
-          bindings = <&kp LEFT_BRACKET>,< &kp RIGHT_BRACKET,k>,< &kp LEFT>;
+          bindings = <&kp LEFT_BRACKET>,< &kp RIGHT_BRACKET>,< &kp LEFT>;
         };
         curly: curly {
           compatible = "zmk,behavior-macro";
