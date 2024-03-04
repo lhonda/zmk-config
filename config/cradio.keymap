@@ -43,7 +43,6 @@
       macros {
         alt_1: alt_1 {
           compatible = "zmk,behavior-macro";
-          #binding-cells = ;
           bindings = <&kp LALT, &kp 1>;
         };
         alt_2: alt_2 {
