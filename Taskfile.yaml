@@ -1,0 +1,21 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - task: build
+      
+  build:
+    cmds:
+      - west build -p -b nice_nano_v2 -- -DSHIELD=cradio_left
+      - west build -p -b nice_nano_v2 -- -DSHIELD=cradio_right
+
+  flash:
+    cmds:
+      - west flash -b nice_nano -- -S boards/shields
+

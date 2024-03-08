@@ -120,8 +120,8 @@
         colemak_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │  ;       │
-            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMICOLON
+        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │ BACKSPACE│
+            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp BACKSPACE_DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │O         │
             &kp A    CHRML(R,         S,         T)     &kp G          &kp M      CHRMR(N,        E,         I)   &kp O
@@ -129,7 +129,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ /    │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt LEF ESC  &kp SPACE    &kp ENTER  &lt RIG TAB
+                                           &lt LEF ESC &kp SPACE      &kp ENTER  &lt RIG TAB
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -146,7 +146,7 @@
         //│ ALT_1    │ ALT_2    │ ALT_3    │ ALT_4    │ INS          │ SHIFT_INS│ HOME     │ PAGE DN  │ PAGE UP  │ END      │
             &alt_1    &alt_2      &alt_3     &alt_4     &kp INS        &shift_ins &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt LEF ESC  &kp SPACE    &kp ENTER  &lt RIG TAB
+                                            &trans      &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -163,7 +163,7 @@
         //│  '       │  PAREN   │ BRACKET  │ CURLY    │ CEDILLA  │   │    \     │  _       │  +       │  │       │   ?      │
             &kp SQT     &paren   &bracket   &curly      &cedilla       &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE  &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt LEF ESC  &kp SPACE    &kp ENTER  &lt RIG TAB
+                                            &trans      &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -172,16 +172,16 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬───────────┬────────────╮   ╭────────────┬────────────┬──────────┬───────────┬──────────╮
         //│  F1      │  F2      │  F3      │  F4       │MEDIA PLAY  │   │            │            │          │ BT CLEAR  │  COLEMAK │
-            &kp F1     &kp F2     &kp F3     &kp F4     &kp K_PLAY_PAUSE &trans    &trans    &trans  &bt BT_CLR   &tog COLEMAK
+            &kp F1     &kp F2     &kp F3     &kp F4     &kp K_PLAY_PAUSE &trans       &trans       &trans      &bt BT_CLR   &tog COLEMAK
         //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼───────────┼──────────┤
         //│  F5      │  F6      │  F7      │  F8       │ VOLUME UP  │   │            │ RSHIFT     │ RCTRL    │ RALT      │
-            &kp F5     &kp F6     &kp F7     &kp F8     &kp K_VOLUME_UP  &trans     &kp RSHIFT   &kp RCTRL  &kp RALT    &trans
+            &kp F5     &kp F6     &kp F7     &kp F8     &kp K_VOLUME_UP  &trans        &kp RSHIFT   &kp RCTRL  &kp RALT    &trans
         //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼───────────┼──────────┤
         //│  F9      │  F10     │  F11     │  F12      │ VOLUME DOWN│   │ BT 1       │ BT 2       │ BT 3     | BT 4      │ BT 5     │
             &kp F9     &kp F10    &kp F11    &kp F12    &kp K_VOLUME_DOWN &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5
         //╰──────────┴──────────┴──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┴───────────┴──────────╯
-                                            &lt LEF ESC  &kp SPACE      &kp ENTER  &lt RIG TAB
-        //                                 ╰───────────┴──────────╯     ╰──────────┴────────────╯
+                                            &trans      &trans           &trans     &trans
+        //                                 ╰───────────┴──────────╯     ╰────────────┴────────────╯
             >;
         };
     };
