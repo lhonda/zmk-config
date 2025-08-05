@@ -1,0 +1,99 @@
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    macros {
+      ALT_SLASH {
+        bindings = <&kp SLASH &kp LALT>;
+      };
+      ALT_TAB {
+        bindings = <&kp TAB &kp LALT>;
+      };
+      SHIFT_INS {
+        bindings = <&kp INS &kp LSHFT>;
+      };
+      ALT_1 {
+        bindings = <&kp 1 &kp LALT>;
+      };
+      ALT_2 {
+        bindings = <&kp 2 &kp LALT>;
+      };
+      ALT_3 {
+        bindings = <&kp 3 &kp LALT>;
+      };
+      ALT_4 {
+        bindings = <&kp 4 &kp LALT>;
+      };
+    };
+
+    layer_0 {
+      bindings = <
+        &kp Q       &kp W       &kp F       &kp P       &kp B
+        &kp GUI_A   &kp ALT_R   &kp CTL_S   &kp SHT_T   &kp G
+        &kp Z       &kp X       &kp C       &kp D       &kp V
+
+        &kp J       &kp L       &kp U       &kp Y       &kp BSPC
+        &kp M       &kp SHT_N   &kp CTL_E   &kp ALT_I   &kp GUI_O
+        &kp K       &kp H       &kp COMMA   &kp DOT     &kp SLASH
+
+        &lt NUM DEL   &lt NAV SPACE &lt FUN ENTER  &lt SYM TAB
+      >;
+    };
+
+    layer_1 {
+      bindings = <
+        &kp 1       &kp 2       &kp 3       &kp 4       &kp 5
+        &trans      &trans      &trans      &trans      &kp ASTR
+        &trans      &trans      &kp DOT     &kp COMMA   &kp SLASH
+
+        &kp 6       &kp 7       &kp 8       &kp 9       &kp 0
+        &kp PLUS    &kp 4       &kp 5       &kp 6       &kp EQUAL
+        &kp MINUS   &kp 1       &kp 2       &kp 3       &trans
+
+        &trans      &trans      &trans      &trans
+      >;
+    };
+
+    layer_2 {
+      bindings = <
+        &trans      &trans      &trans      &trans      &trans
+        &kp PSCR    &trans      &kp CAPS    &kp ESC     &macro ALT_SLASH
+        &macro ALT_1 &macro ALT_2 &macro ALT_3 &macro ALT_4 &kp INS
+
+        &trans      &trans      &trans      &trans      &trans
+        &macro ALT_TAB &kp LEFT &kp DOWN   &kp UP      &kp RGHT
+        &macro SHIFT_INS &kp HOME &kp PGDN &kp PGUP   &kp END
+
+        &trans      &trans      &trans      &trans
+      >;
+    };
+
+    layer_3 {
+      bindings = <
+        &kp F1      &kp F2      &kp F3      &kp F4      &trans
+        &kp F5      &kp F6      &kp F7      &kp F8      &macro ALT_SLASH
+        &kp F9      &kp F10     &kp F11     &kp F12     &trans
+
+        &trans      &trans      &trans      &trans      &trans
+        &trans      &kp SLCT    &kp COPY    &kp PASTE   &kp CUT
+        &trans      &kp FIND    &trans      &trans      &trans
+
+        &trans      &trans      &trans      &trans
+      >;
+    };
+
+    layer_4 {
+      bindings = <
+        &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR  &kp PERC
+        &trans      &kp LCBR    &kp LBRC    &kp LPAR    &macro ALT_SLASH
+        &trans      &kp RCBR    &kp RBRC    &kp RPAR    &trans
+
+        &kp CARET   &kp AMPS    &kp ASTR    &kp GRAVE   &kp TILDE
+        &trans      &kp QUOTE   &kp COLON   &kp SEMI    &kp DQT
+        &trans      &kp UNDERSCORE &kp PIPE &kp BSLASH &trans
+
+        &trans      &trans      &trans      &trans
+      >;
+    };
+  };
+};
