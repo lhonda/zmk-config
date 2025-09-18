@@ -1,3 +1,4 @@
 config SHIELD_SCOTTO63
-    def_bool $(shields_list_contains,scotto63)
+    def_bool y
+
     
