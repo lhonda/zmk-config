@@ -1,0 +1,3 @@
+# Kconfig.shield
+config SHIELD_CRADIO
+    def_bool y

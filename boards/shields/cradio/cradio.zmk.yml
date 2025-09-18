@@ -1,0 +1,9 @@
+file_format: "1"
+id: cradio
+name: Cradio
+type: shield
+url: https://github.com/davidphilipbarr/Sweep
+requires: [nice_nano_v2]   # or nice_nano_v2, pro_micro_rp2040, etc.
+features:
+  - keys
+  - split
