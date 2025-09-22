@@ -114,10 +114,10 @@
         // ========= LAYER 1: Numbers =========
         num_layer {
             bindings = <
-                &kp 1   &kp 2   &kp 3   &kp 4   &kp 5        &kp 6     &kp 7   &kp 8   &kp 9   &kp 0
-                &trans  &trans  &trans  &trans  &kp ASTERISK &kp PLUS  &kp 4   &kp 5   &kp 6   &kp EQUAL
-                &trans  &trans  &kp DOT &kp COMMA &kp SLASH  &kp MINUS &kp 1   &kp 2   &kp 3   &trans
-                                  &trans &trans &trans &trans
+                &kp 1   &kp 2   &kp 3   &kp 4     &kp 5        &kp 6     &kp 7   &kp 8   &kp 9   &kp 0
+                &trans  &trans  &trans  &trans    &kp ASTERISK &kp PLUS  &kp 4   &kp 5   &kp 6   &kp EQUAL
+                &trans  &trans  &kp DOT &kp COMMA &kp SLASH    &kp MINUS &kp 1   &kp 2   &kp 3   &trans
+                                        &trans    &trans       &trans    &trans
             >;
         };
 
