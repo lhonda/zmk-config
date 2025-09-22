@@ -104,8 +104,8 @@
         // ========= LAYER 0: Colemak-DH =========
         default_layer {
             bindings = <
-                &kp Q   &kp W   &kp F   &kp P         &kp B           &kp J   &kp L   &kp U   &kp Y   &kp BSPC
-                &kp A   &kp R   &kp S   &kp T         &kp G           &kp M   &kp N   &kp E   &kp I   &kp O
+                &kp Q   &kp W   &kp F   &kp P         &kp B           &kp J   &kp L   &kp U     &kp Y   &kp BSPC
+                &kp A   &kp R   &kp S   &kp T         &kp G           &kp M   &kp N   &kp E     &kp I   &kp O
                 &kp Z   &kp X   &kp C   &kp D         &kp V           &kp K   &kp H   &kp COMMA &kp DOT &kp SLASH
                                         &lt NUM DEL   &lt NAV SPACE   &lt SYM ENTER   &lt FUN TAB
             >;
@@ -114,9 +114,9 @@
         // ========= LAYER 1: Numbers =========
         num_layer {
             bindings = <
-                &kp 1   &kp 2   &kp 3   &kp 4   &kp 5        &kp 6   &kp 7   &kp 8   &kp 9   &kp 0
-                &trans  &trans  &trans  &trans  &kp ASTERISK &kp PLUS &kp 4  &kp 5   &kp 6   &kp EQUAL
-                &trans  &trans  &kp DOT &kp COMMA &kp SLASH  &kp MINUS &kp 1 &kp 2   &kp 3   &trans
+                &kp 1   &kp 2   &kp 3   &kp 4   &kp 5        &kp 6     &kp 7   &kp 8   &kp 9   &kp 0
+                &trans  &trans  &trans  &trans  &kp ASTERISK &kp PLUS  &kp 4   &kp 5   &kp 6   &kp EQUAL
+                &trans  &trans  &kp DOT &kp COMMA &kp SLASH  &kp MINUS &kp 1   &kp 2   &kp 3   &trans
                                   &trans &trans &trans &trans
             >;
         };
@@ -124,32 +124,31 @@
         // ========= LAYER 2: Navigation =========
         nav_layer {
             bindings = <
-                &trans   &trans   &trans    &trans   &trans      &trans  &trans &trans &trans  &trans
-                &kp PSCR &trans   &caps_word &kp ESC  &alt_slash &alt_tab &kp LEFT &kp DOWN &kp UP &kp RIGHT
+                &trans   &trans   &trans     &trans   &trans     &trans   &trans   &trans   &trans   &trans
+                &kp PSCR &trans   &caps_word &kp ESC  &alt_slash &alt_tab &kp LEFT &kp DOWN &kp UP   &kp RIGHT
                 &alt_1   &alt_2   &alt_3     &alt_4   &kp INS    &sft_ins &kp HOME &kp PGDN &kp PGUP &kp END
-                                  &trans &trans &trans &trans
+                                             &trans   &trans     &trans   &trans
             >;
         };
 
         // ========= LAYER 3: Symbols =========
         sym_layer {
             bindings = <
-                &kp EXCL &kp AT   &kp HASH  &kp DLLR   &kp PERCENT   &kp CARET &kp AMPS &kp ASTERISK &kp GRAVE  &kp TILDE
-                &trans   &kp LCBR &kp LBKT  &kp LPAR   &alt_slash    &trans    &kp QUOT &kp COLON   &kp SEMI   &kp DQT
-                &trans   &kp RCBR &kp RBKT  &kp RPAR   &trans        &trans    &kp UNDER &kp PIPE  &kp BSLH   &trans
-                                   &trans &trans &trans &trans
+                &kp EXCL &kp AT   &kp HASH  &kp DLLR   &kp PERCENT   &kp CARET &kp AMPS  &kp ASTERISK &kp GRAVE  &kp TILDE
+                &trans   &kp LCBR &kp LBKT  &kp LPAR   &alt_slash    &trans    &kp QUOT  &kp COLON    &kp SEMI   &kp DQT
+                &trans   &kp RCBR &kp RBKT  &kp RPAR   &trans        &trans    &kp UNDER &kp PIPE     &kp BSLH   &trans
+                                            &trans     &trans        &trans    &trans
             >;
         };
 
         // ========= LAYER 4: Function =========
         fun_layer {
             bindings = <
-                &kp F1  &kp F2   &kp F3   &kp F4   &trans      &trans &trans &trans &trans &trans
-                &kp F5  &kp F6   &kp F7   &kp F8   &alt_slash  &trans &trans &trans &trans &trans
+                &kp F1  &kp F2   &kp F3   &kp F4   &trans      &trans  &trans      &trans  &trans  &trans
+                &kp F5  &kp F6   &kp F7   &kp F8   &alt_slash  &trans  &trans      &trans  &trans  &trans
                 &kp F9  &kp F10  &kp F11  &kp F12  &trans      &lctl_f &lctl_equal &lctl_c &lctl_v &lctl_x
-                                  &trans &trans &trans &trans
+                                          &trans   &trans      &trans  &trans
             >;
         };
     };
-
 };
