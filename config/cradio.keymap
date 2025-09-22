@@ -124,10 +124,10 @@
         // ========= LAYER 2: Navigation =========
         nav_layer {
             bindings = <
-                &trans   &trans   &trans     &trans   &trans     &trans   &trans   &trans   &trans   &trans
-                &kp PSCR &trans   &caps_word &kp ESC  &alt_slash &alt_tab &kp LEFT &kp DOWN &kp UP   &kp RIGHT
-                &alt_1   &alt_2   &alt_3     &alt_4   &kp INS    &sft_ins &kp HOME &kp PGDN &kp PGUP &kp END
-                                             &trans   &trans     &trans   &trans
+                &trans    &trans   &trans     &trans   &trans     &trans   &trans   &trans   &trans   &trans
+                &kp PSCRN &trans   &caps_word &kp ESC  &alt_slash &alt_tab &kp LEFT &kp DOWN &kp UP   &kp RIGHT
+                &alt_1    &alt_2   &alt_3     &alt_4   &kp INS    &sft_ins &kp HOME &kp PGDN &kp PGUP &kp END
+                                              &trans   &trans     &trans   &trans
             >;
         };
 
