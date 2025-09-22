@@ -2,6 +2,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define default 0
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -9,10 +15,10 @@
         // ========= LAYER 0: Colemak-DH =========
         default_layer {
             bindings = <
-                &kp Q   &kp W   &kp F   &kp P   &kp B        &kp J   &kp L   &kp U   &kp Y   &kp BSPC
-                &kp A   &kp R   &kp S   &kp T   &kp G        &kp M   &kp N   &kp E   &kp I   &kp O
-                &kp Z   &kp X   &kp C   &kp D   &kp V        &kp K   &kp H   &kp COMMA &kp DOT &kp SLASH
-                                  &lt NUM DEL   &lt NAV SPACE   &lt SYM ENTER   &lt FUN TAB
+                &kp Q   &kp W   &kp F   &kp P         &kp B           &kp J   &kp L   &kp U   &kp Y   &kp BSPC
+                &kp A   &kp R   &kp S   &kp T         &kp G           &kp M   &kp N   &kp E   &kp I   &kp O
+                &kp Z   &kp X   &kp C   &kp D         &kp V           &kp K   &kp H   &kp COMMA &kp DOT &kp SLASH
+                                        &lt NUM DEL   &lt NAV SPACE   &lt SYM ENTER   &lt FUN TAB
             >;
         };
 
