@@ -1,107 +1,144 @@
-// Copyright (c) 2022 The ZMK Contributors
-// SPDX-License-Identifier: MIT
-
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-
-// Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
-
 / {
-    behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
+
+        // ========= LAYER 0: Colemak-DH =========
         default_layer {
-            display-name = "Default Layer";
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+                &kp Q   &kp W   &kp F   &kp P   &kp B        &kp J   &kp L   &kp U   &kp Y   &kp BSPC
+                &kp A   &kp R   &kp S   &kp T   &kp G        &kp M   &kp N   &kp E   &kp I   &kp O
+                &kp Z   &kp X   &kp C   &kp D   &kp V        &kp K   &kp H   &kp COMMA &kp DOT &kp SLASH
+                                  &lt NUM DEL   &lt NAV SPACE   &lt SYM ENTER   &lt FUN TAB
             >;
         };
 
-        right_layer {
-            display-name = "Right Layer";
+        // ========= LAYER 1: Numbers =========
+        num_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp INS    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp COLON
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
-            &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &kp SEMI
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
-           &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &trans     &trans     &trans     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp ESC        &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+                &kp 1   &kp 2   &kp 3   &kp 4   &kp 5        &kp 6   &kp 7   &kp 8   &kp 9   &kp 0
+                &trans  &trans  &trans  &trans  &kp ASTERISK &kp PLUS &kp 4  &kp 5   &kp 6   &kp EQUAL
+                &trans  &trans  &kp DOT &kp COMMA &kp SLASH  &kp MINUS &kp 1 &kp 2   &kp 3   &trans
+                                  &trans &trans &trans &trans
             >;
         };
 
-        left_layer {
-            display-name = "Left Layer";
+        // ========= LAYER 2: Navigation =========
+        nav_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+                &trans   &trans   &trans    &trans   &trans      &trans  &trans &trans &trans  &trans
+                &kp PSCR &trans   &caps_word &kp ESC  &alt_slash &alt_tab &kp LEFT &kp DOWN &kp UP &kp RIGHT
+                &alt_1   &alt_2   &alt_3     &alt_4   &kp INS    &sft_ins &kp HOME &kp PGDN &kp PGUP &kp END
+                                  &trans &trans &trans &trans
             >;
         };
 
-        tri_layer {
-            display-name = "Tri Layer";
+        // ========= LAYER 3: Symbols =========
+        sym_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+                &kp EXCL &kp AT   &kp HASH  &kp DLLR   &kp PERCENT   &kp CARET &kp AMPS &kp ASTERISK &kp GRAVE  &kp TILDE
+                &trans   &kp LCBR &kp LBKT  &kp LPAR   &alt_slash    &trans    &kp QUOT &kp COLON   &kp SEMI   &kp DQT
+                &trans   &kp RCBR &kp RBKT  &kp RPAR   &trans        &trans    &kp UNDER &kp PIPE  &kp BSLH   &trans
+                                   &trans &trans &trans &trans
             >;
+        };
+
+        // ========= LAYER 4: Function =========
+        fun_layer {
+            bindings = <
+                &kp F1  &kp F2   &kp F3   &kp F4   &trans      &trans &trans &trans &trans &trans
+                &kp F5  &kp F6   &kp F7   &kp F8   &alt_slash  &trans &trans &trans &trans &trans
+                &kp F9  &kp F10  &kp F11  &kp F12  &trans      &lctl_f &lctl_equal &lctl_c &lctl_v &lctl_x
+                                  &trans &trans &trans &trans
+            >;
+        };
+    };
+
+    // ========= CUSTOM MACROS / COMBOS =========
+    behaviors {
+        // ALT + /
+        alt_slash: alt_slash {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_SLASH";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp SLASH>;
+        };
+
+        // ALT + TAB
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_TAB";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp TAB>;
+        };
+
+        // ALT + number row
+        alt_1: alt_1 {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_1";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp 1>;
+        };
+        alt_2: alt_2 {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_2";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp 2>;
+        };
+        alt_3: alt_3 {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_3";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp 3>;
+        };
+        alt_4: alt_4 {
+            compatible = "zmk,behavior-macro";
+            label = "ALT_4";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp 4>;
+        };
+
+        // Shift + Insert
+        sft_ins: sft_ins {
+            compatible = "zmk,behavior-macro";
+            label = "SHIFT_INS";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT &kp INS>;
+        };
+
+        // Ctrl combos
+        lctl_f: lctl_f {
+            compatible = "zmk,behavior-macro";
+            label = "LCTL_F";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp F>;
+        };
+
+        lctl_equal: lctl_equal {
+            compatible = "zmk,behavior-macro";
+            label = "LCTL_EQUAL";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp EQUAL>;
+        };
+
+        lctl_c: lctl_c {
+            compatible = "zmk,behavior-macro";
+            label = "LCTL_C";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp C>;
+        };
+
+        lctl_v: lctl_v {
+            compatible = "zmk,behavior-macro";
+            label = "LCTL_V";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp V>;
+        };
+
+        lctl_x: lctl_x {
+            compatible = "zmk,behavior-macro";
+            label = "LCTL_X";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp X>;
         };
     };
 };
