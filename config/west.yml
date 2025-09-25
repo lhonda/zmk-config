@@ -15,7 +15,7 @@ manifest:
     - name: zmk-config
       remote: zmk-config
       revision: master
-      import: west.yml
+
 
   self:
     path: config
