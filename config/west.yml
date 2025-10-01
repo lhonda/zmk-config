@@ -6,6 +6,9 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: zmk-config
       url-base: https://github.com/lhonda
+    - name: zmk-scotto63-module
+      url-base: https://github.com/lhonda
+
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -14,6 +17,9 @@ manifest:
       import: app/west.yml
     - name: zmk-config
       remote: zmk-config
+      revision: master
+    - name: zmk-scotto63-module
+      remote: zmk-scotto63-module
       revision: master
 
 
